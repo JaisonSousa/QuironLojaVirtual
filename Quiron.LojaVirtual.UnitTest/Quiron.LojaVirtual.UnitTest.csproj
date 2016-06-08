@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesteCarrinhoCompras.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">
@@ -61,7 +62,7 @@
       <Name>Quiron.LojaVirtual.Dominio</Name>
     </ProjectReference>
     <ProjectReference Include="..\Quiron.LojaVirtual.Web\Quiron.LojaVirtual.Web.csproj">
-      <Project>{45E81FCC-3A1C-4E85-9405-64BF6ADD35D1}</Project>
+      <Project>{45e81fcc-3a1c-4e85-9405-64bf6add35d1}</Project>
       <Name>Quiron.LojaVirtual.Web</Name>
     </ProjectReference>
   </ItemGroup>
