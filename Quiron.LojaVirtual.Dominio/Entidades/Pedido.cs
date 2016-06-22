@@ -40,10 +40,5 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
 
        
 
-     
-
-
-
-
     }
 }

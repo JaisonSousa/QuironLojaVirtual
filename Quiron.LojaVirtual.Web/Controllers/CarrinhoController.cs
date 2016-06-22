@@ -79,5 +79,11 @@ namespace Quiron.LojaVirtual.Web.Controllers
             return PartialView(carrinho);
         }
 
+        public ViewResult FecharPedido()
+        {
+            return View(new Pedido());
+
+        }
+
 	}
 }
