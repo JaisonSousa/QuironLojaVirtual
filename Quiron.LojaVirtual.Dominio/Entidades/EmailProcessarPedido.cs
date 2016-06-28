@@ -29,7 +29,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
 
                if (_emailConfiguracoes.EscreverArquivo)
                {
-                   smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory
+                   smtpClient.DeliveryMethod = SmtpDeliveryMethod.SpecifiedPickupDirectory;
                    smtpClient.PickupDirectoryLocation = _emailConfiguracoes.PastaArquivo;
                    smtpClient.EnableSsl = false;
 
@@ -65,6 +65,9 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
                       mailMessage.BodyEncoding = Encoding.GetEncoding("ISO-8859-1");
 		 
 	            }
+
+
+                smtpClient.Send(mailMessage);
 
         
 

@@ -7,15 +7,15 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
 {
     public class EmailConfiguracoes
     {
-        public bool UsarSsl = false
+        public bool UsarSsl = false;
 
-        public string ServidorSmtp = "smtp.quiron.com.br"
+        public string ServidorSmtp = "smtp.quiron.com.br";
 
         public int ServidorPorta = 587;
 
         public bool EscreverArquivo = false;
 
-        public string PastaArquivo = "@c:\envioemail";
+        public string PastaArquivo = @"C:\envioemail";
 
         public string De = "quiron@quiron.com.br";
 
