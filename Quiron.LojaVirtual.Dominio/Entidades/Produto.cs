@@ -7,7 +7,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
     public class Produto
     {
 
-        //[HiddenInput(DisplayValue = false)]
+        [HiddenInput(DisplayValue = false)]
         public int ProdutoId { get; set; }
 
         [Required(ErrorMessage="Digite o nome do produto")]

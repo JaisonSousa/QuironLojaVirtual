@@ -40,8 +40,10 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                     
                 }
 
-                _context.SaveChanges();
+                
             }
+
+            _context.SaveChanges();
 
         }
 
