@@ -55,7 +55,7 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
             if (prod != null)
             {
                 _context.Produtos.Remove(prod);
-                _context.SaveChanges();
+                //_context.SaveChanges();
                 
             }
 

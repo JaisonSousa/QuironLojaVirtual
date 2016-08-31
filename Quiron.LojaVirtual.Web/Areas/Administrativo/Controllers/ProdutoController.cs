@@ -67,6 +67,8 @@ namespace Quiron.LojaVirtual.Web.Areas.Administrativo.Controllers
 
         public JsonResult Excluir(int produtoId)
         {
+            //tempo 5 sengudos
+            System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
 
             string mensagem = string.Empty;
             _repositorio = new ProdutosRepositorio();

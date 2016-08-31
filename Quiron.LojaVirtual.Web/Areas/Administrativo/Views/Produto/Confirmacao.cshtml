@@ -47,7 +47,7 @@
             var url = "Administrativo/Produto/Excluir/";
             var id = $(".modal-body input[type=hidden]").val();
 
-            var rowNo = "row" + id;
+            var rowNo = '#row-' + id;
 
             $.ajax({
 
@@ -72,9 +72,12 @@
                 },
 
                 complete: function (data) {
+                    var txt = "<strong>" + data.responseText + "<strong>";//apenas para deixar o texto de sucesso em negrito
                     $("#divexcluir").empty(); //Limpar
                     $("#divexcluir").addClass("alert alert-success"); // Classe bootstrap
-                    $("#divexcluir").html(data.responseText); // Retorno
+                    $("#divexcluir").html(txt); // Retorno
+                    $('#loading').empty();
+
                 }
 
 
