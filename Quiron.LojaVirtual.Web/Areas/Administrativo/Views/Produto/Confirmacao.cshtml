@@ -16,6 +16,7 @@
 
             <div class="modal-footer">
                 <button class="btn btn-success" type="button">Confirmar</button>
+                
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -54,6 +55,27 @@
                 type: 'post',
                 dataType: 'json',
                 data: { produtoId: id },
+
+                beforeSend: function () {
+                    var loading = "<span><em>Excluindo</em>&nbsp;<i class='glyphicon glyphicon-refresh icon-refresh-animate'></i></span>";
+                    $('#deleteModal .modal-header h4').after(loading);
+                },
+
+
+                success: function () {
+
+                    $('#deleteModal').modal('hide');
+
+                    $(rowNo).animate({ opacity: 0.0 }, 400, function () {
+                        $(rowNo).remove();
+                    });
+                },
+
+                complete: function (data) {
+                    $("#divexcluir").empty(); //Limpar
+                    $("#divexcluir").addClass("alert alert-success"); // Classe bootstrap
+                    $("#divexcluir").html(data.responseText); // Retorno
+                }
 
 
             });
