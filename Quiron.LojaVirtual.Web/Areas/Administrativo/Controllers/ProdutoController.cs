@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Quiron.LojaVirtual.Web.Areas.Administrativo.Controllers
 {
+    [Authorize]
     public class ProdutoController : Controller
     {
 
