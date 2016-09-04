@@ -13,10 +13,15 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
     {
         public DbSet<Produto> Produtos { get; set; }
 
+        //Aula 39
+        public DbSet<Administrador> Administradores { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Produto>().ToTable("Produtos");
+            //Aula 39
+            modelBuilder.Entity<Produto>().ToTable("Adiministradores");
             //base.OnModelCreating(modelBuilder);
         }
     }
