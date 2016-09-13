@@ -21,7 +21,7 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Produto>().ToTable("Produtos");
             //Aula 39
-            modelBuilder.Entity<Produto>().ToTable("Adiministradores");
+            modelBuilder.Entity<Administrador>().ToTable("Administradores");
             //base.OnModelCreating(modelBuilder);
         }
     }

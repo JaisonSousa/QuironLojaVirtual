@@ -12,7 +12,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
     public class AutenticacaoController : Controller
     {
 
-        private AdiministradoresRepositorio _repositorio; 
+        private AdiministradoresRepositorio _repositorio;
 
         //Aula 40
         // GET: /Autenticacao/
@@ -22,6 +22,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             return View(new Administrador());
         }
 
+        [HttpPost]
         public ActionResult Login(Administrador administrador, string returnUrl)
         {
             _repositorio = new AdiministradoresRepositorio();
@@ -34,36 +35,35 @@ namespace Quiron.LojaVirtual.Web.Controllers
                 {
                     if (!Equals(administrador.Senha, admin.Senha))
                     {
-                        ModelState.AddModelError("Senha não confere!");
+                        ModelState.AddModelError("","Senha não confere!");
 
-                       
-                       
-                        
+
                     }
                     else
                     {
-                        FormsAuthentication.SetAuthCookie(admin.Login,false);
-
+                        FormsAuthentication.SetAuthCookie(admin.Login, false);
+                        //retorna um booleano tru ou false
                         if (Url.IsLocalUrl(returnUrl)
-                           && returnUrl > 1
+                           && returnUrl.Length > 1
                            && returnUrl.StartsWith("/")
-                           && !returnUrl.StartsWith("/")
+                           && !returnUrl.StartsWith("//")
                            && !returnUrl.StartsWith("/\\"))
 
                             return Redirect(returnUrl);
                     }
-                    
+
                 }
                 else
                 {
                     ModelState.AddModelError("", "Administrador não localizado");
                 }
             }
-           
+
+            return View(new Administrador());
 
 
         }
-	}
+    }
 
-    
+
 }
