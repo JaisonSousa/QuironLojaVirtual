@@ -24,5 +24,10 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
 
         [Required(ErrorMessage = "Digite a categoria")]
         public string Categoria { get; set; }
+
+        public byte[] Imagem { get; set; }
+
+        public string ImageMimeType { get; set; }
+
     }
 }
