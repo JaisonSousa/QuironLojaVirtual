@@ -26,6 +26,7 @@
         <h3>Alterar @Model.Nome</h3>
     </div>
 
+    @*enctype = "multipart/form-data" que é uma codificação que permite que arquivos sejam enviados através de POST*@
 
     @using (Html.BeginForm("Alterar", "Produto", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
@@ -42,7 +43,7 @@
                 {
                     case "ProdutoId":
                     case "Imagem":
-                    case "ImagemMimeType":
+                    case "ImageMimeType":
                         break;
                     default:
 
@@ -73,7 +74,24 @@
                 <div style="position:relative;">
                     <label>Imagem</label>
 
+                    @*Abri uma janela para selecionar uma imagem*@
+                    <a class='btn' href='javascript:;'>
+                        Selecione a imagem...
+                        <input type="file" name="Image" size="40" style="position:absolute;z-index:2;top:0; left:0;filter: alpha(opacity=0); opacity:0; background-color:transparent;color:transparent;" onchange='$("#upload-file-info").html($(this).val());'>
+                        <span class='label label-info' id="upload-file-info"></span>
+                    </a>
+
                 </div>
+
+                @if (Model.Imagem == null)
+                {
+                    <div class="form-control-static">Nenhuma imagem</div>
+
+                }
+                else
+                {
+                    <img class="img-thumbnail" width="120" height="120" src="@Url.Action("ObterImagem", "Produto", new { Model.ProdutoId })"/>
+                }
 
 
             </div>
