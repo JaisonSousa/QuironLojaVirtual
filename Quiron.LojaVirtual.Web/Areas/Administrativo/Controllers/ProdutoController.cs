@@ -102,13 +102,15 @@ namespace Quiron.LojaVirtual.Web.Areas.Administrativo.Controllers
             if (prod != null)
             {
                 return File(prod.Imagem, prod.ImageMimeType);
-                
+
             }
 
-            return null; 
+            return null;
 
-            
+
 
         }
+
+       
 	}
 }
