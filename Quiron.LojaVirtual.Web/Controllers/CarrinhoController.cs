@@ -32,7 +32,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             return RedirectToAction("Index", new {returnUrl });
         }
 
-        //Sesão
+        //Sesão aula 47
         private Carrinho ObterCarrinho()
         {
             Carrinho carrinho = (Carrinho)Session["Carrinho"];
@@ -41,7 +41,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             {
                 carrinho = new Carrinho();
                 Session["Carrinho"] = carrinho;
-                
+
             }
 
             return carrinho;

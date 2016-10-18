@@ -1,9 +1,14 @@
-﻿using System;
+﻿using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Web.InfraEstrutura;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+
+using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Web.InfraEstrutura;
 
 namespace Quiron.LojaVirtual.Web
 {
@@ -13,6 +18,8 @@ namespace Quiron.LojaVirtual.Web
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            ModelBinders.Binders.Add(typeof(Carrinho), new CarrinhoModelBinder());
         }
     }
 }
