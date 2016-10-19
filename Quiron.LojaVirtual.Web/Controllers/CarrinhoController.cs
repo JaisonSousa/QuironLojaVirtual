@@ -76,7 +76,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
         //Aula 48 sem sessão
         //
         // GET: /Carrinho/
-        public RedirectToRouteResult Adicionar(Carrinho carrinho,int produtoId, string returnUrl)
+        public RedirectToRouteResult Adicionar(Carrinho carrinho,int produtoId,int quantidade, string returnUrl)
         {
             _repositorio = new ProdutosRepositorio();
 
@@ -85,7 +85,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
             if (produto != null)
             {
 
-                carrinho.AdicionarItem(produto, 1);
+                carrinho.AdicionarItem(produto, quantidade);
 
             }
 
