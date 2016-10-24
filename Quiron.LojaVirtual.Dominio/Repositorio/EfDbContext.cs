@@ -16,6 +16,9 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 39
         public DbSet<Administrador> Administradores { get; set; }
 
+        //Aula 55
+        public DbSet<Categoria> Categorias { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
