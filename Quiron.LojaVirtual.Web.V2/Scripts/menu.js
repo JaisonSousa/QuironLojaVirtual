@@ -10,7 +10,7 @@ app.iniciarlizar = function () {
     $('#main-menu').smartmenus();
     //$('.sidey .nav').navgoco();
     app.ObterEsportes();
-    //app.ObterMarcas();
+    app.ObterMarcas();
     //app.ObterClubesNacionais();
     //app.ObterClubesInternacionais();
 
@@ -63,17 +63,17 @@ app.ObterEsportes = function () {
 
 };
 
-//app.ObterMarcas = function () {
+app.ObterMarcas = function () {
 
-//    $.getJSON('/menu/obtermarcas', function (data) {
+    $.getJSON('/menu/obtermarcas', function (data) {
 
-//        $(data).each(function () {
-//            $(".marcas").append("<li><a href='#'>" + this.MarcaDescricao + "</a></li>");
-//        });
+        $(data).each(function () {
+            $(".marcas").append("<li><a href='#'>" + this.MarcaDescricao + "</a></li>");
+        });
 
-//    });
+    });
 
-//};
+};
 
 
 

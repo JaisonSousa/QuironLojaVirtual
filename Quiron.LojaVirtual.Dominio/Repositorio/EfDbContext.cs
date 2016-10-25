@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
@@ -18,6 +19,9 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 
         //Aula 55
         public DbSet<Categoria> Categorias { get; set; }
+
+        //Aula 58
+        public DbSet<MarcaVitrine> MarcaVitrine { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
