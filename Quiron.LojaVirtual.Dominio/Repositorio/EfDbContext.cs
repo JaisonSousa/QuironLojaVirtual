@@ -32,6 +32,21 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 60
         public DbSet<Selecoes> Selecoes { get; set; }
 
+        //Aula 63
+        public DbSet<FaixaEtaria> FaixaEtaria { get; set; }
+
+        //Aula 63
+        public DbSet<Genero> Genero { get; set; }
+
+        //Aula 63
+        public DbSet<Grupo> Grupo { get; set; }
+
+        //Aula 63
+        public DbSet<Marca> Marca { get; set; }
+
+        //Aula 63
+        public DbSet<Modalidade> Modalidade { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
