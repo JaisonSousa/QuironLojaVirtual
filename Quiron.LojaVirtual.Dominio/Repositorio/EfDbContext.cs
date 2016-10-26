@@ -23,6 +23,15 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 58
         public DbSet<MarcaVitrine> MarcaVitrine { get; set; }
 
+        //Aula 59
+        public DbSet<ClubesNacionais> ClubesNacionais { get; set; }
+
+        //Aula 59
+        public DbSet<ClubesInternacionais> ClubesInternacionais { get; set; }
+
+        //Aula 60
+        public DbSet<Selecoes> Selecoes { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

@@ -8,11 +8,12 @@ $(function () {
 app.iniciarlizar = function () {
 
     $('#main-menu').smartmenus();
-    //$('.sidey .nav').navgoco();
+    $('.sidey .nav').navgoco();
     app.ObterEsportes();
     app.ObterMarcas();
-    //app.ObterClubesNacionais();
-    //app.ObterClubesInternacionais();
+    app.ObterClubesNacionais();
+    app.ObterClubesInternacionais();
+    app.ObterSelecoes();
 
 
 }
@@ -21,32 +22,32 @@ app.iniciarlizar = function () {
 
 //
 
-//app.ObterClubesNacionais = function () {
+app.ObterClubesNacionais = function () {
 
-//    $.getJSON('menu/obterclubesnacionais', function (data) {
+    $.getJSON('menu/obterclubesnacionais', function (data) {
 
-//        $(data).each(function () {
-//            $("#clubesnacionais").append("<li><a href='/nav/times/" + this.ClubeCodigo + "/" + this.ClubeSeo + "'>" + this.Clube + "</a></li>");
-//        });
+        $(data).each(function () {
+            $("#clubesnacionais").append("<li><a href='/nav/times/" + this.ClubeCodigo + "/" + this.ClubeSeo + "'>" + this.Clube + "</a></li>");
+        });
 
-//    });
+    });
 
-//}
+}
 
 
 
-//app.ObterClubesInternacionais = function () {
+app.ObterClubesInternacionais = function () {
 
-//    $.getJSON('menu/obterclubesinternacionais', function (data) {
+    $.getJSON('menu/obterclubesinternacionais', function (data) {
 
-//        $(data).each(function () {
+        $(data).each(function () {
            
-//            $("#clubesinternacionais").append("<li><a href='/nav/times/" + this.ClubeCodigo + "/" + this.ClubeSeo + "'>" + this.Clube + "</a></li>");
-//        });
+            $("#clubesinternacionais").append("<li><a href='/nav/times/" + this.ClubeCodigo + "/" + this.ClubeSeo + "'>" + this.Clube + "</a></li>");
+        });
 
-//    });
+    });
 
-//}
+}
 
 
 
@@ -69,6 +70,18 @@ app.ObterMarcas = function () {
 
         $(data).each(function () {
             $(".marcas").append("<li><a href='#'>" + this.MarcaDescricao + "</a></li>");
+        });
+
+    });
+
+};
+
+app.ObterSelecoes = function () {
+
+    $.getJSON('/menu/obterselecoes', function (data) {
+
+        $(data).each(function () {
+            $("#selecoes").append("<li><a href='/nav/times/" + this.SelecaoCodigo + "/" + this.SelecaoSeo + "'>" + this.Selecao + "</a></li>");
         });
 
     });

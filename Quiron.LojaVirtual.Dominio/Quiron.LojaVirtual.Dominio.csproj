@@ -57,7 +57,12 @@
     <Compile Include="Entidades\EmailProcessarPedido.cs" />
     <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\Vitrine\Clubes.cs" />
+    <Compile Include="Entidades\Vitrine\ClubesInternacionais.cs" />
+    <Compile Include="Entidades\Vitrine\ClubesNacionais.cs" />
     <Compile Include="Entidades\Vitrine\MarcaVitrine.cs" />
+    <Compile Include="Entidades\Vitrine\ProdutoVitrine.cs" />
+    <Compile Include="Entidades\Vitrine\Selecoes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\AdiministradoresRepositorio.cs" />
     <Compile Include="Repositorio\CategoriaRepositorio.cs" />
