@@ -47,6 +47,9 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 63
         public DbSet<Modalidade> Modalidade { get; set; }
 
+        //Aula 64
+        public DbSet<ProdutoVitrine> ProdutoVitrine { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

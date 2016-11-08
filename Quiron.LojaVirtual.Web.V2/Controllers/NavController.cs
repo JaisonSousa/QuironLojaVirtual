@@ -1,4 +1,5 @@
-﻿using Quiron.LojaVirtual.Web.V2.Models;
+﻿using Quiron.LojaVirtual.Dominio.Repositorio;
+using Quiron.LojaVirtual.Web.V2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,17 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public JsonResult TesteMetedoVetrine()
+        {
+            ProdutoModeloRepositorio repositorio = new ProdutoModeloRepositorio();
+            var produtos = repositorio.ObterProdutosVitrine(categoria:"0003",marca:"0002");
+
+            return Json(produtos, JsonRequestBehavior.AllowGet);
+
+ 
+
         }
 
         [Route("nav/{id}/{marca}")]
