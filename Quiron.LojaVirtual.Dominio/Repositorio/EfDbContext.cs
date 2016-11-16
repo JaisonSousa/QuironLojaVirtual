@@ -50,6 +50,9 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 64
         public DbSet<ProdutoVitrine> ProdutoVitrine { get; set; }
 
+        //Aula 70
+        public DbSet<SubGrupo> SubGrupo { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
