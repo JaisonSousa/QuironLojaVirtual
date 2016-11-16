@@ -1,14 +1,16 @@
 ﻿var app = {};
 
 $(function () {
+
+    $('#main-menu').smartmenus();
+    /* Ecommerce sidebar */
+    $('.sidey .nav').navgoco();
     app.iniciarlizar();
 });
 
 
 app.iniciarlizar = function () {
 
-    $('#main-menu').smartmenus();
-    $('.sidey .nav').navgoco();
     app.ObterEsportes();
     app.ObterMarcas();
     app.ObterClubesNacionais();
@@ -57,7 +59,7 @@ app.ObterEsportes = function () {
     $.getJSON('/menu/obteresportes', function (data) {
 
         $(data).each(function () {
-            $("#esportes").append("<li><a href='#'>" + this.CategoriaDescricao + "</a></li>");
+            $("#esportes").append("<li><a href='/nav/esportes/" + this.CategoriaCodigo + "/" + this.CategoriaDescricaoSeo + "'>" + this.CategoriaDescricao + "</a></li>");
         });
 
     });
@@ -69,7 +71,9 @@ app.ObterMarcas = function () {
     $.getJSON('/menu/obtermarcas', function (data) {
 
         $(data).each(function () {
-            $(".marcas").append("<li><a href='#'>" + this.MarcaDescricao + "</a></li>");
+            $("#marcas").append("<li><a href='/nav/" + this.MarcaCodigo + "/" + this.MarcaDescricaoSeo + "'>" + this.MarcaDescricao + "</a></li>");
+            $("#calcadosmarcas").append("<li><a href='/nav/0003/calcados/" + this.MarcaCodigo + "/" + this.MarcaDescricaoSeo + "'>" + this.MarcaDescricao + "</a></li>");
+            $("#roupasmarcas").append("<li><a href='/nav/0001/roupas/" + this.MarcaCodigo + "/" + this.MarcaDescricaoSeo + "'>" + this.MarcaDescricao + "</a></li>");
         });
 
     });
