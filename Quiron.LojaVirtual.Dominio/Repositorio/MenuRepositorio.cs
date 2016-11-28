@@ -3,6 +3,8 @@ using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
 using System.Collections.Generic;
 using System.Linq;
+using FastMapper;
+using System.Runtime.Remoting.Messaging;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
@@ -96,10 +98,23 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                             
                         };
 
+            return query.Project().To<SubGrupoDto>().ToList(); 
+
 
 
         }
         #endregion [Menu Lateral Casual]
+
+        #region [Suplementos]
+        public Categoria()
+        {
+            var categoriaSumplementos = "0008";
+            return _context.Categorias
+                .FirstOrDefault(s => s.CategoriaCodigo == categoriaSumplementos );
+        }
+       
+        
+        #endregion
 
 
     }

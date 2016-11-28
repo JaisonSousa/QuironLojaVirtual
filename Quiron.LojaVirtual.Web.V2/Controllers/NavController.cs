@@ -123,6 +123,33 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
 
 
         #endregion
+
+
+        #region [Casual]
+
+        /// <summary>
+        /// Obte modalidades de casual exibido no Menu
+        /// </summary>
+        /// <returns></returns>
+        
+
+        [ChildActionOnly]
+        [OutputCache(Duration = 3600, VaryByParam = "*")]
+        public ActionResult CasualSubGrupo()
+        {
+            _menuRepositorio = new MenuRepositorio();
+            var casual = _menuRepositorio.ModalidadeCasual();
+            var subGrupo = _menuRepositorio.ObterCasualSubgrupo();
+            var modal = new ModalidadeSubGrupoViewModel
+            {
+                Modalidade = casual,
+                SubGrupos = subGrupo
+            };
+
+            return PartialView("_CasualSubGrupo", modal);
+
+        }
+        #endregion
         //Aula 69
         //[Route("nav/{id}/{marca}")]
         //public ActionResult ObterChuteiraSociete(string id, string genero)
@@ -137,5 +164,24 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
         //    return View("Navegacao", _model);
 
         //}
+
+        [Route("{modalidadeCodigo}/casual/{subGrupoCodigo}/{subGrupoDescricao}")]
+        public ActionResult ObterModalidadeSubGrupo(string modalidadeCodigo
+            , string subGrupoCodigo, string subGrupoDescricao)
+        {
+
+            _repositorio = new ProdutoModeloRepositorio();
+            var produtos = _repositorio.ObterProdutosVitrine(modalidade: modalidadeCodigo,
+                subgrupo: subGrupoCodigo);
+
+            _model = new ProdutosViewModel
+            {
+                Produtos = produtos,
+                Titulo = subGrupoDescricao.UpperCaseFirst()
+            };
+
+            return View("Navegacao", _model);
+        }
 	}
+
 }
