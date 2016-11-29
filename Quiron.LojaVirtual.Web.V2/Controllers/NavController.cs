@@ -182,6 +182,68 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
 
             return View("Navegacao", _model);
         }
-	}
+
+        #region [ Suplementos ]
+
+
+
+        /// <summary>
+        /// Obtem suplementos
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        [OutputCache(Duration = 3600, VaryByParam = "*")]
+        public ActionResult Suplementos()
+        {
+            _menuRepositorio = new MenuRepositorio();
+            var categoria = _menuRepositorio.Suplemento();
+            var subGrupos = _menuRepositorio.ObterSuplementos();
+
+
+            CategoriaSubGruposViewModel model = new CategoriaSubGruposViewModel
+            {
+                Categoria = categoria,
+                SubGrupos = subGrupos,
+
+            };
+            return PartialView("_Suplementos", model);
+        }
+
+        [Route("{categoriaCodigo}/suplementos/{subGrupoCodigo}/{subGrupoDescricao}")]
+        public ActionResult ObterCategoriaSubGrupos(string categoriaCodigo, string subGrupoCodigo, string subGrupoDescricao)
+        {
+            _repositorio = new ProdutoModeloRepositorio();
+            var produtos = _repositorio.ObterProdutosVitrine(categoriaCodigo, subgrupo: subGrupoCodigo);
+            _model = new ProdutosViewModel { Produtos = produtos, Titulo = subGrupoDescricao.UpperCaseFirst() };
+            return View("Navegacao", _model);
+
+        }
+
+        #endregion
+
+        #region [Consulta]
+        public ActionResult ConsultarProduto(string termo)
+        {
+            _repositorio = new ProdutoModeloRepositorio();
+            var produtos = _repositorio.ObterProdutosVitrine(busca: termo);
+            _model = new ProdutosViewModel
+            {
+                Produtos = produtos,
+                Titulo = termo.UpperCaseFirst()
+            };
+
+            return View("Navegacao", _model);
+
+               
+
+
+
+        }
+
+        #endregion [Consulta]
+
+
+
+    }
 
 }

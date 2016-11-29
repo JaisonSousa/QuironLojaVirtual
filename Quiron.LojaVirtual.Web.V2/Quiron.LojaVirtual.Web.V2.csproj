@@ -133,6 +133,7 @@
     </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="HtmlHelpers\StringHelpers.cs" />
+    <Compile Include="Models\CategoriaSubGruposViewModel.cs" />
     <Compile Include="Models\ModalidadeSubGrupoViewModel.cs" />
     <Compile Include="Models\ProdutosViewModel.cs" />
     <Compile Include="Models\SubGrupoCategoriasViewModel.cs" />
@@ -279,6 +280,7 @@
     <Content Include="Views\Nav\_NavTresColunas.cshtml" />
     <Content Include="Views\Nav\_TenisCategoria.cshtml" />
     <Content Include="Views\Nav\_CasualSubGrupo.cshtml" />
+    <Content Include="Views\Nav\_Suplementos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">

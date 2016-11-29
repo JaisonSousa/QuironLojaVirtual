@@ -106,11 +106,23 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         #endregion [Menu Lateral Casual]
 
         #region [Suplementos]
-        public Categoria()
+        public Categoria Suplemento()
         {
             var categoriaSumplementos = "0008";
             return _context.Categorias
                 .FirstOrDefault(s => s.CategoriaCodigo == categoriaSumplementos );
+        }
+
+        public IEnumerable<SubGrupo> ObterSuplementos()
+        {
+            var subGrupos = new[]
+            {
+                "0162","0381","0557","0564","0565","1082","1083","1084","1085", "0977"
+            };
+            return _context.SubGrupo
+                .Where(s => subGrupos.Contains(s.SubGrupoCodigo) && s.GrupoCodigo == "0012")
+                .OrderBy(s => s.SubGrupoDescricao);
+
         }
        
         
