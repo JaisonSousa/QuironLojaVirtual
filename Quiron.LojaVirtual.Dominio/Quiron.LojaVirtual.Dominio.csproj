@@ -30,14 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="FastMapper">
-      <HintPath>..\packages\FastMapper.1.2.0\lib\net40\FastMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -53,12 +53,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dto\DetalhesProdutoDto.cs" />
     <Compile Include="Dto\SubGrupoDto.cs" />
     <Compile Include="Entidades\Administrador.cs" />
     <Compile Include="Entidades\Carrinho.cs" />
     <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Entidades\Cor.cs" />
     <Compile Include="Entidades\EmailConfiguracoes.cs" />
     <Compile Include="Entidades\EmailProcessarPedido.cs" />
+    <Compile Include="Entidades\Estoque.cs" />
     <Compile Include="Entidades\FaixaEtaria.cs" />
     <Compile Include="Entidades\Genero.cs" />
     <Compile Include="Entidades\Grupo.cs" />
@@ -66,7 +69,9 @@
     <Compile Include="Entidades\Modalidade.cs" />
     <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
+    <Compile Include="Entidades\QuironProduto.cs" />
     <Compile Include="Entidades\SubGrupo.cs" />
+    <Compile Include="Entidades\Tamanho.cs" />
     <Compile Include="Entidades\Vitrine\Clubes.cs" />
     <Compile Include="Entidades\Vitrine\ClubesInternacionais.cs" />
     <Compile Include="Entidades\Vitrine\ClubesNacionais.cs" />
@@ -76,6 +81,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\AdiministradoresRepositorio.cs" />
     <Compile Include="Repositorio\CategoriaRepositorio.cs" />
+    <Compile Include="Repositorio\DetalhesProdutoRepositorio.cs" />
     <Compile Include="Repositorio\EfDbContext.cs" />
     <Compile Include="Repositorio\MenuRepositorio.cs" />
     <Compile Include="Repositorio\ProdutoModeloRepositorio.cs" />

@@ -53,6 +53,20 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         //Aula 70
         public DbSet<SubGrupo> SubGrupo { get; set; }
 
+        //Aula 75
+        public DbSet<QuironProduto> QuironProdutos { get; set; }
+
+        //Aula 75
+        public DbSet<Cor> Cores { get; set; }
+
+        //Aula 75
+        public DbSet<Tamanho> Tamanhos { get; set; }
+
+        //Aula 75
+        public DbSet<Estoque> Estoque {get;set;}
+
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
