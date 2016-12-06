@@ -36,13 +36,13 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         public DbSet<FaixaEtaria> FaixaEtaria { get; set; }
 
         //Aula 63
-        public DbSet<Genero> Genero { get; set; }
+        public DbSet<Genero> Generos { get; set; }
 
         //Aula 63
-        public DbSet<Grupo> Grupo { get; set; }
+        public DbSet<Grupo> Grupos { get; set; }
 
         //Aula 63
-        public DbSet<Marca> Marca { get; set; }
+        public DbSet<Marca> Marcas { get; set; }
 
         //Aula 63
         public DbSet<Modalidade> Modalidade { get; set; }
@@ -64,6 +64,8 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
 
         //Aula 75
         public DbSet<Estoque> Estoque {get;set;}
+
+        public DbSet<ProdutoModelo> ProdutoModelo { get; set; }
 
 
 

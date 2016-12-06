@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -125,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\DetalhesProdutoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NavController.cs" />
@@ -134,6 +138,7 @@
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="HtmlHelpers\StringHelpers.cs" />
     <Compile Include="Models\CategoriaSubGruposViewModel.cs" />
+    <Compile Include="Models\DetalhesProdutoViewModel.cs" />
     <Compile Include="Models\ModalidadeSubGrupoViewModel.cs" />
     <Compile Include="Models\ProdutosViewModel.cs" />
     <Compile Include="Models\SubGrupoCategoriasViewModel.cs" />
@@ -243,6 +248,7 @@
     <Content Include="Content\sm-mint\_mixins.scss" />
     <Content Include="Content\sm-mint\_sm-mint.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\detalhesProduto.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\jquery.smartmenus.js" />
@@ -281,6 +287,7 @@
     <Content Include="Views\Nav\_TenisCategoria.cshtml" />
     <Content Include="Views\Nav\_CasualSubGrupo.cshtml" />
     <Content Include="Views\Nav\_Suplementos.cshtml" />
+    <Content Include="Views\DetalhesProduto\Detalhes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">

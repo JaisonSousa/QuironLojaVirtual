@@ -1,5 +1,7 @@
 ﻿@model Quiron.LojaVirtual.Web.V2.Models.ProdutosViewModel
 @*@model Quiron.LojaVirtual.Web.V2.Helpers*@
+@using Quiron.LojaVirtual.Web.V2.HtmlHelpers
+@using Quiron.LojaVirtual.Web.V2.Helpers
 
 <div class="sep-bor"></div>
 
@@ -23,6 +25,16 @@
                 <div class="item">
                     <!-- Item image -->
                     <div class="item-image">
+                        <a href="@Url.Action("Detalhes", "DetalhesProduto", new
+                                     {
+                                         codigo = @Model.Produtos[i].ProdutoModeloCor.Substring(0, 6),
+                                         marca = @Model.Produtos[i].MarcaDescricao.ToLower(),
+                                         produto = @Model.Produtos[i].ProdutoDescricao.ToSeoUrl(),
+                                         corCodigo = @Model.Produtos[i].ProdutoModeloCor.Substring(6)
+                                     })">
+                            <img src="@ImageHelper.CaminhoImagem()/180x180/@Model.Produtos[i].Imagem" alt="@Model.Produtos[i].ProdutoDescricao" class="img-responsive" />
+                        </a>
+
                         @*<a href="single-item.html" class="zoom">
                             <img src="@ImageHelper.CaminhoImagem()/180x180/@Model.Produtos[i].Imagem" alt="" class="img-responsive" />
                         </a>*@

@@ -99,6 +99,7 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
                         };
 
             return query.Project().To<SubGrupoDto>().ToList(); 
+           
 
 
 
