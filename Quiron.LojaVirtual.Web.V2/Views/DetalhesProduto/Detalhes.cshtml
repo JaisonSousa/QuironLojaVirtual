@@ -1,5 +1,6 @@
 ﻿
 @using Quiron.LojaVirtual.Web.V2.Helpers
+@using Quiron.LojaVirtual.Web.V2.HtmlHelpers
 @model Quiron.LojaVirtual.Web.V2.Models.DetalhesProdutoViewModel
 
 
@@ -15,7 +16,7 @@
 
         <div class="col-md-9 col-md-push-3">
             <!-- Breadcrumb -->
-            @*@Html.Partial("_BreadCrumb", @Model)*@
+            @Html.Partial("_BreadCrumb", @Model.Breadcrumb)
 
 
 

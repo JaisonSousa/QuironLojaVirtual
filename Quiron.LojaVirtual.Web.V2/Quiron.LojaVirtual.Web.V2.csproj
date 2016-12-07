@@ -214,6 +214,7 @@
     <Content Include="js\html5shiv.js" />
     <Content Include="js\jquery.carouFredSel-6.2.1-packed.js" />
     <Content Include="js\jquery.countdown.min.js" />
+    <Content Include="js\jquery.elevatezoom.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.navgoco.js" />
     <Content Include="js\jquery.plugin.min.js" />
@@ -288,6 +289,7 @@
     <Content Include="Views\Nav\_CasualSubGrupo.cshtml" />
     <Content Include="Views\Nav\_Suplementos.cshtml" />
     <Content Include="Views\DetalhesProduto\Detalhes.cshtml" />
+    <Content Include="Views\DetalhesProduto\_BreadCrumb.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">

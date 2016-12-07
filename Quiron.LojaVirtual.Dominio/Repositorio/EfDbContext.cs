@@ -7,11 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
 {
-    public class EfDbContext : DbContext
+    public class EfDbContext : IdentityDbContext<Cliente>
     {
+        public EfDbContext() : base("EFDbContext") { }
+
         public DbSet<Produto> Produtos { get; set; }
 
         //Aula 39
@@ -75,7 +78,7 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
             modelBuilder.Entity<Produto>().ToTable("Produtos");
             //Aula 39
             modelBuilder.Entity<Administrador>().ToTable("Administradores");
-            //base.OnModelCreating(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
