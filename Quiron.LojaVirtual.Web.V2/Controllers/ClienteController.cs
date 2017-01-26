@@ -5,6 +5,7 @@ using Quiron.LojaVirtual.Web.V2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -84,6 +85,53 @@ namespace Quiron.LojaVirtual.Web.V2.Controllers
             }
 
             return View(model);
+        }
+
+        [Route("login")]
+        [AllowAnonymous]
+        public ActionResult Login(string returnUrl)
+        {
+            ViewBag.RerurnUrl = returnUrl;
+            return View();
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("login")]
+        [AllowAnonymous]
+        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var result = await SignInManager.PasswordSignInAsync(model.Username, model.Password, model.RememberMe, shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    if (returnUrl != null)
+                        return Redirect(returnUrl);
+                    else
+                        return RedirectToAction("Index", "Nav");
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
+            }
+        }
+
+        [HttpPost]
+        [Route("logoff")]
+        public ActionResult Logoff()
+        {
+            HttpContext.GetOwinContext()
+                .Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Nav");
         }
 	}
 }

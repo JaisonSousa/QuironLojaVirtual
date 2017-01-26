@@ -1,0 +1,92 @@
+﻿@model Quiron.LojaVirtual.Web.V2.Models.CarrinhoViewModel
+
+@{
+    Layout = null;
+}
+
+<style>
+    #cartTable td {
+        vertical-align: middle;
+    }
+
+    .quantidade-textbox
+    {
+        width:40px;
+    }
+</style>
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title">Seu carrinho</h4>
+</div>
+
+<div class="modal-body">
+
+<table id="cartTable" class="table">
+    <thead>
+        <tr>
+            <th>Quantidade</th>
+            <th>Produto</th>
+            <th class="text-right">Preço</th>
+            <th class="text-right">SubTotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.Carrinho.ItensCarrinhos)
+        {
+            <tr>
+
+                @*<td class="text-center">@item.Quantidade</td>*@
+                <td class="text-center">@item.Produto.ProdutoDescricao</td>
+                <td class="text-center">@item.Produto.Preco.ToString("c")</td>
+
+                <td class="text-right">@((item.Quantidade * item.Produto.Preco).ToString("c"))</td>
+
+                <td>
+                    @using(Html.BeginForm("Adicionar","Carrinho"))
+                    {
+                        @Html.Hidden("Produto", item.Produto.ProdutoModeloCodigo);
+                        @Html.Hidden("Cor", item.Produto.CorCodigo)
+                        @Html.Hidden("Tamanho", item.Produto.TamanhoCodigo)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        @Html.TextBox("quantidade", item.Quantidade, new {@class = "quantidade-textbox", @type="number", min="1", max="10" })
+                        <input class="btn btn-sm btn-danger" type="submit" value="Atualizar" />
+                        
+                    }
+                </td>
+
+                
+                <td>
+                    @using (Html.BeginForm("Remover","Carrinho"))
+                    {
+                        @Html.Hidden("ProdutoId",item.Produto.ProdutoId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-warning" type="submit" value="Remover"/>
+                        
+                    }
+                </td>
+            </tr>
+
+            
+            
+        }
+            
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3" class="text-right">Total:</td>
+            <td class="text-right">
+                @Model.Carrinho.ObterValorTotal().ToString("c")
+            </td>
+        </tr>
+    </tfoot>
+
+</table>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Continuar comprando</button>
+        @Html.ActionLink("Fechar o pedido", "FecharPedido", "Carrinho", new { @class = "btn btn-primary" })
+    </div>
+
+</div>
+

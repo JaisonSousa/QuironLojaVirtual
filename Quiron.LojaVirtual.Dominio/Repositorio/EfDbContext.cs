@@ -10,10 +10,16 @@ using Quiron.LojaVirtual.Dominio.Entidades.Vitrine;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Quiron.LojaVirtual.Dominio.Repositorio
-{
+{                              //Aula 78     
     public class EfDbContext : IdentityDbContext<Cliente>
     {
-        public EfDbContext() : base("EFDbContext") { }
+        public EfDbContext() : base("EfDbContext") { }
+
+        public static EfDbContext Create()
+        {
+            return new EfDbContext();
+        }
+
 
         public DbSet<Produto> Produtos { get; set; }
 

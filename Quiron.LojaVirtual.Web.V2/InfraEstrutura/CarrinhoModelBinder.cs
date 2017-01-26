@@ -3,7 +3,7 @@ using System.Web.Mvc;
 
 
 
-namespace Quiron.LojaVirtual.Web.V2
+namespace Quiron.LojaVirtual.Web.V2.InfraEstrutura
 {
     public class CarrinhoModelBinder : IModelBinder
     {

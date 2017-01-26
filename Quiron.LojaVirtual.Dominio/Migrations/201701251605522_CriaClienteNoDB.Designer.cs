@@ -13,7 +13,7 @@ namespace Quiron.LojaVirtual.Dominio.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201612071813515_CriaClienteNoDB"; }
+            get { return "201701251605522_CriaClienteNoDB"; }
         }
         
         string IMigrationMetadata.Source

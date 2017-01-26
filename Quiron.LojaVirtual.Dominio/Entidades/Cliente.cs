@@ -12,7 +12,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
         public string Senha { get; set; }
 
         // Telefone
-        [Required]
+        [Required] // não null
         public virtual TelefoneCliente Telefone { get; set; }
 
         // Documento

@@ -94,9 +94,9 @@
     <Compile Include="Entidades\Vitrine\MarcaVitrine.cs" />
     <Compile Include="Entidades\Vitrine\ProdutoVitrine.cs" />
     <Compile Include="Entidades\Vitrine\Selecoes.cs" />
-    <Compile Include="Migrations\201612071813515_CriaClienteNoDB.cs" />
-    <Compile Include="Migrations\201612071813515_CriaClienteNoDB.Designer.cs">
-      <DependentUpon>201612071813515_CriaClienteNoDB.cs</DependentUpon>
+    <Compile Include="Migrations\201701251605522_CriaClienteNoDB.cs" />
+    <Compile Include="Migrations\201701251605522_CriaClienteNoDB.Designer.cs">
+      <DependentUpon>201701251605522_CriaClienteNoDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,14 +107,15 @@
     <Compile Include="Repositorio\MenuRepositorio.cs" />
     <Compile Include="Repositorio\ProdutoModeloRepositorio.cs" />
     <Compile Include="Repositorio\ProdutosRepositorio.cs" />
+    <Compile Include="Repositorio\QuironProdutosRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612071813515_CriaClienteNoDB.resx">
-      <DependentUpon>201612071813515_CriaClienteNoDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201701251605522_CriaClienteNoDB.resx">
+      <DependentUpon>201701251605522_CriaClienteNoDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

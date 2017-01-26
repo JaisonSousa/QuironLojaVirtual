@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
 <html ng-app="app">
 <head>
     <meta charset="utf-8">
@@ -21,53 +23,11 @@
 <body>
 
     <!-- Shopping cart Modal -->
-    <div class="modal fade" id="shoppingcart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade"  id="shoppingcart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Shopping Cart</h4>
-                </div>
-                <div class="modal-body">
+            <div class="modal-content" data-url="@Url.Action("Index", "Carrinho")">
+           
 
-                    <!-- Items table -->
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Quantity</th>
-                                <th>Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="single-item.html">HTC One</a></td>
-                                <td>2</td>
-                                <td>$250</td>
-                            </tr>
-                            <tr>
-                                <td><a href="single-item.html">Apple iPhone</a></td>
-                                <td>1</td>
-                                <td>$502</td>
-                            </tr>
-                            <tr>
-                                <td><a href="single-item.html">Galaxy Note</a></td>
-                                <td>4</td>
-                                <td>$1303</td>
-                            </tr>
-                            <tr>
-                                <th></th>
-                                <th>Total</th>
-                                <th>$2405</th>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue Shopping</button>
-                    <button type="button" class="btn btn-info">Checkout</button>
-                </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -87,7 +47,7 @@
                     <div class="kart-links">
                         @if (Request.IsAuthenticated)
                         {
-                            <a href="@Url.Action("Login", "Cliente")">Seja bem-vindo(a) @*@User.Identity.GetUserName()!*@ </a>
+                            <a href="@Url.Action("Login", "Cliente")">Seja bem-vindo(a) @User.Identity.GetUserName()!</a>
 
                             using (Html.BeginForm("Logoff", "Cliente", FormMethod.Post, new { id = "logoff-form", style = "display: inline;" }))
                             {
@@ -104,7 +64,11 @@
 
                         <<a href="@Url.Action("CriaCliente", "Cliente")">Meu cadastro</a>
                         <a href="register.html">Meus pedidos</a>
-                        <a data-toggle="modal" href="#shoppingcart"><i class="fa fa-shopping-cart"></i> 3 itens - R$ 300,00</a>
+                        @*<a data-toggle="modal" href="#shoppingcart"><i class="fa fa-shopping-cart"></i> 3 itens - R$ 300,00</a>*@
+                        <a id="cartMenu" data-toggle="modal" href="#shoppingcart" data-url="@Url.Action("Resumo", "Carrinho")">
+
+
+                        </a>
                     </div>
                 </div>
 
@@ -375,6 +339,24 @@
     @Scripts.Render("~/Scripts/jsprojetos")
 
     @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+            loadCart();
+            
+        });
+
+        function loadCart() {
+            var cartFromMenu = $("#cartMenu");
+            var url = cartFromMenu.data("url");
+            cartFromMenu.load(url);
+            
+           
+            var modalElement = $("#shoppingcart").find(".modal-content");
+            var url = modalElement.data("url");
+            modalElement.load(url);
+        }
+    </script>
 
 </body>
 </html>

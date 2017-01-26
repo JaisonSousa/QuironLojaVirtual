@@ -5,6 +5,7 @@ using Quiron.LojaVirtual.Web.Controllers;
 using System.Linq;
 using System.Web.Mvc;
 using Quiron.LojaVirtual.Web.Models;
+using Quiron.LojaVirtual.Web.V2.Models;
 
 namespace Quiron.LojaVirtual.UnitTest
 {

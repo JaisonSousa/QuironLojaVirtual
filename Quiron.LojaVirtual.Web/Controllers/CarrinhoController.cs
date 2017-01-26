@@ -1,6 +1,7 @@
 ﻿using Quiron.LojaVirtual.Dominio.Entidades;
 using Quiron.LojaVirtual.Dominio.Repositorio;
 using Quiron.LojaVirtual.Web.Models;
+using Quiron.LojaVirtual.Web.V2.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -12,7 +13,7 @@ namespace Quiron.LojaVirtual.Web.Controllers
 {
     public class CarrinhoController : Controller
     {
-        private ProdutosRepositorio _repositorio;
+        private ProdutosRepositorio _repositorio = new ProdutosRepositorio();
 
         //Aula 48 sem sessão
         public ViewResult Index(Carrinho carrinho,string returnUrl)
