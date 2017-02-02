@@ -77,6 +77,11 @@ namespace Quiron.LojaVirtual.Dominio.Repositorio
         public DbSet<ProdutoModelo> ProdutoModelo { get; set; }
 
 
+        //Aula 82
+        public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<ProdutoPedido> ProdutosPedidos { get; set; }
+
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

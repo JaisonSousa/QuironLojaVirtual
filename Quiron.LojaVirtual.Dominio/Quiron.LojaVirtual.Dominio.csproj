@@ -84,6 +84,7 @@
     <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Entidades\ProdutoModelo.cs" />
+    <Compile Include="Entidades\ProdutoPedido.cs" />
     <Compile Include="Entidades\QuironProduto.cs" />
     <Compile Include="Entidades\SubGrupo.cs" />
     <Compile Include="Entidades\Tamanho.cs" />
@@ -98,6 +99,10 @@
     <Compile Include="Migrations\201701251605522_CriaClienteNoDB.Designer.cs">
       <DependentUpon>201701251605522_CriaClienteNoDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201701271531354_AddPedido.cs" />
+    <Compile Include="Migrations\201701271531354_AddPedido.Designer.cs">
+      <DependentUpon>201701271531354_AddPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\AdiministradoresRepositorio.cs" />
@@ -105,6 +110,7 @@
     <Compile Include="Repositorio\DetalhesProdutoRepositorio.cs" />
     <Compile Include="Repositorio\EfDbContext.cs" />
     <Compile Include="Repositorio\MenuRepositorio.cs" />
+    <Compile Include="Repositorio\PedidosRepositorio.cs" />
     <Compile Include="Repositorio\ProdutoModeloRepositorio.cs" />
     <Compile Include="Repositorio\ProdutosRepositorio.cs" />
     <Compile Include="Repositorio\QuironProdutosRepositorio.cs" />
@@ -116,6 +122,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201701251605522_CriaClienteNoDB.resx">
       <DependentUpon>201701251605522_CriaClienteNoDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201701271531354_AddPedido.resx">
+      <DependentUpon>201701271531354_AddPedido.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

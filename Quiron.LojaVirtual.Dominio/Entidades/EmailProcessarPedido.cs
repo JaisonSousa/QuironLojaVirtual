@@ -47,11 +47,11 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
                 body.AppendFormat("Valor total do pedido:{0:c}",carrinho.ObterValorTotal())
                     .AppendLine("------------------")
                     .AppendLine("Enviar para:")
-                    .AppendLine(pedido.NomeCliente)
-                    .AppendLine(pedido.Email)
-                    .AppendLine(pedido.Endereco ?? "")
-                    .AppendLine(pedido.Cidade ?? "")
-                    .AppendLine(pedido.Complemento ?? "")
+                    .AppendLine(pedido.cliente.NomeCompleto)
+                    .AppendLine(pedido.cliente.Email)
+                    .AppendLine(pedido.cliente.Endereco.Rua ?? ", " + pedido.cliente.Endereco.Numero ?? "")
+                    .AppendLine(pedido.cliente.Endereco.Cidade ?? "")
+                    .AppendLine(pedido.cliente.Endereco.Complemento ?? "")
                     .AppendLine("------------------")
                     .AppendFormat("Para presente?: {0}", pedido.EmbrulhaPresente ? "Sim" : "Não");
 

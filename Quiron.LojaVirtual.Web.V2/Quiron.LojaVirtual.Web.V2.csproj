@@ -151,6 +151,7 @@
     <Folder Include="Content\sm-simple\mixins\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Menu\" />
+    <Folder Include="Views\Pedidos\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\PedidosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

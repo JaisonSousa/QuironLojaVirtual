@@ -38,5 +38,7 @@ namespace Quiron.LojaVirtual.Dominio.Entidades
             get { return ProdutoCodigo.Substring(0, 8) + ".jpg"; }
 
         }
+
+        public virtual ICollection<ProdutoPedido> ProdutosPedido { get; set; }
     }
 }
