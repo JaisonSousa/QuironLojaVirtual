@@ -1,7 +1,9 @@
 ﻿using Quiron.LojaVirtual.Dominio.Entidades;
+using Quiron.LojaVirtual.Dominio.Repositorio;
 using Quiron.LojaVirtual.Web.V2.InfraEstrutura;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -20,6 +22,8 @@ namespace Quiron.LojaVirtual.Web.V2
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             ModelBinders.Binders.Add(typeof(Carrinho), new CarrinhoModelBinder());
+
+            Database.SetInitializer<EfDbContext>(null);
         }
     }
 }

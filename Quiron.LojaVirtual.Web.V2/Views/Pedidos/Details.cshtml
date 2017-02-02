@@ -1,0 +1,50 @@
+﻿@model Quiron.LojaVirtual.Dominio.Entidades.Pedido
+
+@{
+    ViewBag.Title = "Detalhes do Pedido";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pedido</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmbrulhaPresente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmbrulhaPresente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pago)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pago)
+        </dd>
+
+        <dt>
+            Produtos
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProdutosPedido)
+        </dd>
+
+    </dl>
+</div>
+<p>
+   
+    @Html.ActionLink("Voltar aos meus pedidos", "Index")
+</p>
