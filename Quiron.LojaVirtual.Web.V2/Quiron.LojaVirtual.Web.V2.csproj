@@ -339,6 +339,8 @@
     <Content Include="Views\Carrinho\Resumo.cshtml" />
     <Content Include="Views\Pedidos\Index.cshtml" />
     <Content Include="Views\Pedidos\Details.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\EnderecoCliente.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ProdutosPedidoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Quiron.LojaVirtual.Dominio\Quiron.LojaVirtual.Dominio.csproj">

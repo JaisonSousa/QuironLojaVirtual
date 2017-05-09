@@ -4,7 +4,7 @@
     ViewBag.Title = "Detalhes do Pedido";
 }
 
-<h2>Details</h2>
+<h2>Detalhes do Pedido</h2>
 
 <div>
     <h4>Pedido</h4>
@@ -39,7 +39,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProdutosPedido)
+            @Html.DisplayFor(model => model.ProdutosPedido, templateName: "ProdutosPedidoList")
         </dd>
 
     </dl>

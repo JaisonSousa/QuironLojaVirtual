@@ -5,40 +5,44 @@
         
 }*@
 
+@{
+    ViewBag.Title = "Quiron: Fechar o pedido";
+}
 <h2>Fechar o pedido</h2>
-
-<p>Digite suas informações abaixos</p>
-
 @using (Html.BeginForm())
 {
+
     @Html.ValidationSummary()
-    
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.ClienteId)
+
     <h3>Enviar para</h3>
+
     <div class="form-group">
-        <label>Nome do cliente</label>
-        @Html.TextBoxFor(x => x.NomeCliente, new { @class="form-control"})
-        @Html.ValidationMessageFor(x => x.NomeCliente)
-
+        <label>Nome do cliente:</label>
+        @Html.TextBoxFor(x => x.cliente.UserName, new { @class = "form-control", disabled = true })
+        @*@Html.TextBoxFor(x => x.Cliente.NomeCompleto, new { @class = "form-control", disabled = true })*@
     </div>
-    
-    <h3>Dados para entrega</h3>
-    //Reduzindo o código repetido  
-    foreach (var property in ViewData.ModelMetadata.Properties)
-    {
-        if (property.PropertyName != "NomeCliente" && property.PropertyName != "EmbrulhaPresente")
-        {
-            <div class="form-group">
-        <label>
-            @(property.DisplayName ?? property.PropertyName )
-        </label>
-        @Html.TextBox(property.PropertyName,null, new { @class="form-control"})
 
-           </div>
-            
-        }
-       
-     }
-    
+    <h3>Dados para entrega</h3>
+
+    @Html.DisplayFor(m => m.cliente.Endereco)
+
+    <h3>Opções</h3>
+    <div class="checkbox">
+        <label>
+            @Html.EditorFor(x => x.EmbrulhaPresente)
+            Embrulhar para presente?
+        </label>
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Fechar o pedido" />
+
+    <hr />
+
+}
+
+
     @*<div class="form-group">
         <label>Cep:</label>
         @Html.TextBoxFor(x => x.Cep, new { @class = "form-control" })
@@ -74,7 +78,7 @@
 
     </div>*@
     
-    <h3>Opções</h3>
+    @*<h3>Opções</h3>
     <div class="checkbox">
         <label>
             @Html.EditorFor(x => x.EmbrulhaPresente)
@@ -83,13 +87,13 @@
         </label>
     </div>
     
-    <input class="btn btn-primary" type="submit" value="Fechar o Pedido"/>
+    <input class="btn btn-primary" type="submit" value="Fechar o Pedido"/>*@
     
         
     
-}
+@*}*@
 
-<script src="~/Scripts/jquery-1.10.2.js"></script>
+@*<script src="~/Scripts/jquery-1.10.2.js"></script>
 
 <script>
     $('#Cep').change(function (e) {
@@ -119,5 +123,5 @@
         });
 
     });
-</script>
+</script>*@
 
